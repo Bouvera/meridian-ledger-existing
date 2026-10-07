@@ -3,9 +3,100 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | Meridian Ledger Co.</title>
-<meta name="description" content="Meridian Ledger Co. offers bookkeeping and tax services for small businesses.">
+<title>Contact a Small Business Bookkeeper | Meridian Ledger Co.</title>
+<meta name="description" content="Send Meridian Ledger Co. a message or call (512) 555-0176, Monday to Friday, 8:30 to 5:00 Central. Tell us your software and how far behind the books are.">
+<link rel="canonical" href="https://meridian-ledger-existing.vercel.app/contact.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Meridian Ledger Co.">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Contact a Small Business Bookkeeper | Meridian Ledger Co.">
+<meta property="og:description" content="Send Meridian Ledger Co. a message or call (512) 555-0176, Monday to Friday, 8:30 to 5:00 Central. Tell us your software and how far behind the books are.">
+<meta property="og:url" content="https://meridian-ledger-existing.vercel.app/contact.html">
+<meta property="og:image" content="https://meridian-ledger-existing.vercel.app/og/meridian-ledger-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Meridian Ledger Co. Remote bookkeeping for small businesses, Austin, Texas">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact a Small Business Bookkeeper | Meridian Ledger Co.">
+<meta name="twitter:description" content="Send Meridian Ledger Co. a message or call (512) 555-0176, Monday to Friday, 8:30 to 5:00 Central. Tell us your software and how far behind the books are.">
+<meta name="twitter:image" content="https://meridian-ledger-existing.vercel.app/og/meridian-ledger-share.png">
+<meta name="twitter:image:alt" content="Meridian Ledger Co. Remote bookkeeping for small businesses, Austin, Texas">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AccountingService",
+      "@id": "https://meridian-ledger-existing.vercel.app/#business",
+      "name": "Meridian Ledger Co.",
+      "url": "https://meridian-ledger-existing.vercel.app/",
+      "description": "Remote monthly bookkeeping, financial reports, tax preparation support, catch-up and cleanup, and payroll and sales tax coordination for small businesses. Based in Austin, Texas. The firm does not prepare or file tax returns.",
+      "image": "https://meridian-ledger-existing.vercel.app/og/meridian-ledger-share.png",
+      "email": "hello@meridianledger.example",
+      "telephone": "+1-512-555-0176",
+      "foundingDate": "2022",
+      "founder": {
+        "@type": "Person",
+        "name": "Rachel Okonkwo",
+        "jobTitle": "Owner"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:30",
+          "closes": "17:00"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+1-512-555-0176",
+        "email": "hello@meridianledger.example",
+        "areaServed": "US",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://meridian-ledger-existing.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://meridian-ledger-existing.vercel.app/contact.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -25,16 +116,83 @@
 
 <main id="main">
   <div class="wrap hero">
-    <h1>Contact us</h1>
-    <p class="lede">The fastest way to reach us is email.</p>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Contact</li>
+      </ol>
+    </nav>
+    <h1>Contact a small business bookkeeper</h1>
+    <p class="lede">Send us a message, or call during office hours.</p>
   </div>
 
   <section>
-    <div class="wrap prose">
-      <p><a href="mailto:hello@meridianledger.example">hello@meridianledger.example</a></p>
-      <p>Tell us a little about your business: what you do, how many people work there, which accounting software you use and how far behind the books are, if at all. We will reply within one business day.</p>
-      <p>Phone: (512) 555-0176<br>Hours: Monday to Friday, 8:30 am to 5:00 pm Central</p>
-      <p>We work remotely and serve clients in every state, so there is no office to visit.</p>
+    <div class="wrap contact-grid">
+      <div class="contact-form">
+        <h2 id="message">Send us a message</h2>
+        <div id="sent" class="sent" role="status" tabindex="-1">
+          <p><strong>Thank you. Your message has been sent to Meridian Ledger Co.</strong></p>
+        </div>
+        <!-- FORM HANDLER: the one place to connect it is the action attribute on the form below.
+             Until a handler is chosen it opens the visitor's mail app with the answers filled in
+             (the same as the old email link). When a handler is connected, change action to its URL,
+             remove enctype, and have it send the visitor back to contact.html#sent for the
+             confirmation message. No JavaScript is needed. -->
+        <form id="contact-form" method="post" action="mailto:hello@meridianledger.example?subject=Website%20message%20from%20Meridian%20Ledger%20Co.%20contact%20form" enctype="text/plain">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Email address</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-business">What kind of business do you run?</label>
+          <input id="f-business" name="business_type" type="text" autocomplete="organization-title" required>
+        </div>
+        <div class="field">
+          <label for="f-size">How many people work there?</label>
+          <input id="f-size" name="headcount" type="text" inputmode="numeric" required>
+        </div>
+        <div class="field">
+          <label for="f-software">Which accounting software do you use?</label>
+          <select id="f-software" name="accounting_software" required>
+            <option value="" selected disabled>Choose one</option>
+            <option>QuickBooks Online</option>
+            <option>Xero</option>
+            <option>Something else</option>
+            <option>None yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-behind">How far behind are the books?</label>
+          <select id="f-behind" name="how_far_behind" required>
+            <option value="" selected disabled>Choose one</option>
+            <option>Not behind</option>
+            <option>A few months</option>
+            <option>About a year</option>
+            <option>More than a year</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-notes">Anything else we should know? (optional)</label>
+          <textarea id="f-notes" name="notes" rows="4"></textarea>
+        </div>
+        <p class="note">We use your answers only to reply to your message. We do not prepare or file tax returns.</p>
+        <p><button class="btn" type="submit">Send message</button></p>
+        </form>
+      </div>
+
+      <div class="contact-details">
+        <h2>Other ways to reach us</h2>
+        <p class="line"><span class="k">Email</span><br><a class="touch" href="mailto:hello@meridianledger.example">hello@meridianledger.example</a></p>
+        <p class="line"><span class="k">Phone</span><br><a class="touch" href="tel:+15125550176">(512) 555-0176</a></p>
+        <p class="line"><span class="k">Hours</span><br>Monday to Friday, 8:30 am to 5:00 pm Central</p>
+        <p>Tell us a little about your business: what you do, how many people work there, which accounting software you use and how far behind the books are, if at all. We will reply within one business day.</p>
+        <p>We work remotely and serve clients in every state, so there is no office to visit. To see what we do first, read about our <a href="services.html">bookkeeping services</a>.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -42,7 +200,8 @@
 <footer class="site">
   <div class="wrap">
     <p class="disclosure">Fictional business, built as a portfolio case study.</p>
-    <p>&copy; 2026 Meridian Ledger Co. Austin, Texas. <a href="mailto:hello@meridianledger.example">hello@meridianledger.example</a></p>
+    <p>&copy; 2026 Meridian Ledger Co. Austin, Texas.</p>
+    <p class="foot-contact"><a href="mailto:hello@meridianledger.example">hello@meridianledger.example</a> <span aria-hidden="true">/</span> <a href="tel:+15125550176">(512) 555-0176</a></p>
   </div>
 </footer>
 </body>

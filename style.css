@@ -39,16 +39,19 @@ a:hover { color: var(--green-dark); }
 .skip:focus { left: 1rem; top: 1rem; background: #fff; padding: 0.5rem 0.75rem; z-index: 10; }
 
 header.site { border-bottom: 1px solid var(--rule); background: #fff; }
+@media (min-width: 761px) {
+  header.site { position: sticky; top: 0; z-index: 5; }
+}
 header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1.5rem; padding-top: 0.9rem; padding-bottom: 0.9rem; }
 
-.brand { font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.brand { display: inline-flex; align-items: center; min-height: 48px; font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
 .brand span { color: var(--green); }
 
 nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
-nav a { color: var(--ink); text-decoration: none; padding: 0.4rem 0; display: inline-block; }
+nav a { color: var(--ink); text-decoration: none; padding: 0 0.1rem; display: inline-flex; align-items: center; min-height: 48px; }
 nav a:hover, nav a[aria-current="page"] { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
 
-.hero { padding: 4rem 0 3.5rem; }
+.hero { padding: 4rem 1.25rem 3.5rem; }
 .hero p.lede { font-size: 1.25rem; max-width: 40rem; color: var(--muted); }
 
 .btn { display: inline-block; background: var(--green); color: #fff; text-decoration: none; padding: 0.8rem 1.4rem; border-radius: 4px; font-weight: 600; }
@@ -75,8 +78,54 @@ footer.site a { color: #c9ced6; }
 footer.site p { margin: 0 0 0.4rem; }
 footer.site .disclosure { color: #e4e7ec; font-weight: 600; }
 
+/* SEO and conversion fix additions */
+:focus-visible { outline: 3px solid var(--green-dark); outline-offset: 2px; }
+
+.crumbs { margin: 0 0 1.25rem; font-size: 0.95rem; }
+.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0 0.5rem; color: var(--muted); }
+.crumbs li + li::before { content: "/"; margin-right: 0.5rem; color: var(--muted); }
+.crumbs a { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; min-width: 48px; }
+
+.hero p.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; margin: 1.5rem 0 0; }
+.btn-link { display: inline-flex; align-items: center; min-height: 48px; font-weight: 600; }
+.btn { min-height: 48px; border: 0; font: inherit; font-weight: 600; cursor: pointer; }
+a.btn { display: inline-flex; align-items: center; }
+
+.grid3 h3 a { display: inline-flex; align-items: center; min-height: 48px; }
+.grid3 h3 { margin-bottom: 0; }
+.more { margin: 1.75rem 0 0; }
+.prose h3 { margin-top: 1.75rem; }
+.prose h2 + h3 { margin-top: 0.5rem; }
+.prose h2 { margin-top: 2rem; }
+.prose h2:first-child { margin-top: 0; }
+
+.touch { display: inline-flex; align-items: center; min-height: 48px; }
+footer.site .foot-contact a { display: inline-flex; align-items: center; min-height: 48px; }
+
+.contact-grid { display: grid; gap: 3rem; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: start; }
+.contact-form h2, .contact-details h2 { margin-top: 0; }
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+.field input, .field select, .field textarea { display: block; width: 100%; min-height: 48px; padding: 0.65rem 0.8rem; font: inherit; color: var(--ink); background: #fff; border: 1px solid var(--muted); border-radius: 4px; }
+.field textarea { min-height: 8rem; }
+.note { color: var(--muted); font-size: 0.95rem; }
+.line { margin-bottom: 0.75rem; }
+.line .k { font-weight: 600; }
+.sent { display: none; padding: 1rem 1.25rem; margin-bottom: 1.5rem; background: var(--tint); border: 1px solid var(--green); border-radius: 4px; }
+.sent:target { display: block; }
+.sent p { margin: 0; }
+
+.crumbs + h1 { margin-top: 0; }
+
 @media (max-width: 720px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   h1 { font-size: 1.9rem; }
-  .hero { padding: 2.5rem 0 2.25rem; }
+  .hero { padding: 2.5rem 1.25rem 2.25rem; }
   .grid3 { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+/* Sticky header from 761px up only (about 78px tall at 1280px). On phones it scrolls away: it is 134px tall at 375px (nav wraps), about 20 percent of the screen. */
+html { scroll-padding-top: 1rem; }
+@media (min-width: 761px) {
+  html { scroll-padding-top: 5.5rem; }
 }
